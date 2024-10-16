@@ -39,6 +39,7 @@
         z-index: 1;
         font-family: 'Roboto', sans-serif;
         background-color: rgba(0, 0, 0, 0.7); /* Optional for better readability */
+        color: white;
     }
 
     /* Navbar */
@@ -64,7 +65,7 @@
 
     .toggle {
         cursor: pointer;
-        display: flex;
+        display: none; /* Hide the toggle button initially */
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
@@ -131,6 +132,87 @@
     .active {
         display: block;
     }
+
+    /* Media Queries for Tablet and Mobile */
+    @media (max-width: 768px) {
+        /* Navbar adjustments */
+        .toggle {
+            display: flex; /* Show the toggle on smaller screens */
+        }
+
+        #nav-links {
+            display: none; /* Hide navigation links initially */
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+        }
+
+        #nav-links.active {
+            display: flex; /* Show nav links when toggle is clicked */
+        }
+
+        /* Reduce font sizes for smaller screens */
+        body {
+            font-size: 14px;
+        }
+
+        .textI {
+            font-size: 16px;
+        }
+
+        /* Image adjustments for responsiveness */
+        #about img, #resources img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .logoimg {
+            width: 40px; /* Adjust logo size for tablets and phones */
+        }
+
+        footer {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Even smaller font size for mobile devices */
+        body {
+            font-size: 12px;
+        }
+
+        .toggle {
+            display: flex; /* Show the toggle for mobile */
+        }
+
+        #nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%; /* Full width for mobile navigation */
+            padding: 10px;
+        }
+
+        #nav-links.active {
+            display: flex; /* Show the links when active */
+        }
+
+        .logoimg {
+            width: 35px; /* Smaller logo for mobile */
+        }
+
+        footer {
+            padding: 8px;
+        }
+    }
   </style>
 </head> 
 <body> 
@@ -170,13 +252,13 @@
   <!-- About Section -->
   <div id="about"> 
     <img class="imgs" src="download%20(1).jpg" alt="About Image"> 
-    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, easystudys is here to support your academic journey and help you achieve your goals.</h3> 
+    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, [Your Website Name] is here to support your academic journey and help you achieve your goals.</h3> 
   </div> 
 
   <!-- Resources Section -->
   <div id="resources"> 
     <img class="imgss" src="download%20(2).jpg" alt="Resources Image"> 
-    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, easystudys is here to support your academic journey and help you achieve your goals.</h3> 
+    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, [Your Website Name] is here to support your academic journey and help you achieve your goals.</h3> 
   </div> 
 
   <!-- Footer -->
