@@ -214,7 +214,17 @@
             padding: 8px;
         }
     }
-  </style>
+      
+  /* About and Resources Images */
+  #about img, #resources img {
+      width: 100%; /* Makes images responsive */
+      max-width: 400px; /* Sets a maximum width to ensure uniform size */
+      height: auto;
+      border-radius: 10px;
+  }
+</style>
+
+  
 </head> 
 <body> 
   <!-- Video Background -->
@@ -232,7 +242,7 @@
       <div class="logo"> 
         <a href="#" class="logo-text"></a> 
       </div> 
-      <div class="toggle" id="toggle-btn"> 
+      <div class="toggle" id="toggle-btn" aria-label="Toggle navigation menu"> 
         <span></span> 
         <span></span> 
         <span></span> 
@@ -254,18 +264,19 @@
   <!-- About Section -->
   <div id="about"> 
     <img class="imgs" src="download%20(1).jpg" alt="About Image"> 
-    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, [Your Website Name] is here to support your academic journey and help you achieve your goals.</h3> 
+    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, SSVT is here to support your academic journey and help you achieve your goals.</h3> 
   </div> 
   <!-- Resources Section -->
   <div id="resources"> 
     <img class="imgss" src="download%20(2).jpg" alt="Resources Image"> 
-    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, [Your Website Name] is here to support your academic journey and help you achieve your goals.</h3> 
+    <h3 class="textI">At SSVT Tuition, we take pride in providing high-quality notes that are clear, concise, and tailored to help students understand even the most challenging topics. Our notes are designed to be student-friendly, making complex concepts easy to grasp and reinforcing key ideas essential for exams.Our teachers are experienced, passionate, and dedicated to each student’s success. They go beyond simply teaching; they mentor, inspire, and support students, creating a learning environment where students feel comfortable to ask questions and explore subjects deeply. With personalized attention and expert guidance, our teachers ensure that every student receives the support they need to excel.</h3> 
   </div>
   <div id="resources">
     <img class="imgss" src="everythings diffrent.jpg" alt="Resources Image">
-    <h3 class="textI">At SSVT Tuition, we understand that every child is different, with unique strengths and learning styles. Our approach is tailored to meet each student’s individual needs, helping them not only grasp concepts but also build confidence in their abilities. We believe that with the right guidance and encouragement, every child has the potential to excel and even exceed their own expectations. At SSVT, we strive to bring out the best in each student, empowering them to not only improve academically but to grow as motivated, confident learners.
-    </h3>div>
-      <!-- Footer -->
+    <h3 class="textI">At SSVT Tuition, we understand that every child is different, with unique strengths and learning styles. Our approach is tailored to meet each student’s individual needs, helping them not only grasp concepts but also build confidence in their abilities. We believe that with the right guidance and encouragement, every child has the potential to excel and even exceed their own expectations. At SSVT, we strive to bring out the best in each student, empowering them to not only improve academically but to grow as motivated, confident learners.</h3>
+  </div>
+
+  <!-- Footer -->
   <footer>
     About 
     <br> © All rights are reserved 2050 
@@ -281,5 +292,4 @@
     });
   </script> 
 </body>
-
 </html>
