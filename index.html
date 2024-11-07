@@ -42,6 +42,29 @@
         background-color: rgba(0, 0, 0, 0.7); /* Optional for better readability */
         color: white;
     }
+      /* Underline effect for Home, About, Contact, and Resources */
+.underline {
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    padding-bottom: 5px; /* Space for underline effect */
+    font-weight: bold; /* Optional, to make the text stand out more */
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Color of the underline (white for visibility on dark background) */
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease-in-out; /* Smooth transition for width */
+}
+
+.underline:hover::after {
+    width: 100%; /* Full width when hovered */
+}
+
 
     /* Navbar */
     .navbar {
@@ -178,6 +201,7 @@
         footer {
             padding: 10px;
         }
+        
     }
 
     @media (max-width: 480px) {
@@ -221,6 +245,7 @@
       max-width: 400px; /* Sets a maximum width to ensure uniform size */
       height: auto;
       border-radius: 10px;
+      color: transparent;
   }
 </style>
 
@@ -236,29 +261,32 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="navbar"> 
+ <nav class="navbar"> 
     <div class="navdiv"> 
-      <img class="logoimg" src="NEWLOGO.jpg"> 
-      <div class="logo"> 
-        <a href="#" class="logo-text"></a> 
-      </div> 
-      <div class="toggle" id="toggle-btn" aria-label="Toggle navigation menu"> 
-        <span></span> 
-        <span></span> 
-        <span></span> 
-      </div> 
-      <ul id="nav-links"> 
-        <li><a href="https://manishbro500.github.io/ssvt2/">Home</a></li> 
-        <li><a href="https://manishbro500.github.io/ssvt2/about.html">About</a></li> 
-        <li><a href="contact.html">Contact</a></li> 
-        <li><a href="#resources">Resources</a></li> 
-        <li><button><a href="class8th.html">class-8th</a></button></li> 
-        <li><button><a href="class%209th.html">class-9th</a></button></li> 
-        <li><button><a href="">REVIEW</a></button></li> 
-        <li><button><a href="class%2010th.html">class 10th</a></button></li> 
-      </ul> 
+        <img class="logoimg" src="NEWLOGO.jpg"> 
+        <div class="logo"> 
+            <a href="#" class="logo-text"></a> 
+        </div> 
+        <div class="toggle" id="toggle-btn" aria-label="Toggle navigation menu"> 
+            <span></span> 
+            <span></span> 
+            <span></span> 
+        </div> 
+        <ul id="nav-links"> 
+            <li><a href="https://manishbro500.github.io/ssvt2/" class="underline">Home</a></li> 
+            <li><a href="https://manishbro500.github.io/ssvt2/about.html" class="underline">About</a></li> 
+            <li><a href="contact.html" class="underline">Contact</a></li> 
+            <li><a href="#resources" class="underline">Resources</a></li> 
+            <li><button><a href="class8th.html">class-8th</a></button></li> 
+            <li><button><a href="class%209th.html">class-9th</a></button></li> 
+            <li><button><a href="">REVIEW</a></button></li> 
+            <li><button><a href="class%2010th.html">class 10th</a></button></li> 
+        </ul> 
     </div> 
-  </nav> 
+</nav>
+
+
+
  
 
   <!-- About Section -->
