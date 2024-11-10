@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap" rel="stylesheet"> 
+  <title>SSVT</title> 
+  
+  <style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Video Background */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    /* Ensure content stays visible over the video */
+    body {
+        position: relative;
+        z-index: 1;
+        font-family: 'Roboto', sans-serif;
+        background-color: rgba(0, 0, 0, 0.7); /* Optional for better readability */
+        color: white;
+    }
+      /* Underline effect for Home, About, Contact, and Resources */
+.underline {
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    padding-bottom: 5px; /* Space for underline effect */
+    font-weight: bold; /* Optional, to make the text stand out more */
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff; /* Color of the underline (white for visibility on dark background) */
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease-in-out; /* Smooth transition for width */
+}
+
+.underline:hover::after {
+    width: 100%; /* Full width when hovered */
+}
+
+
+    /* Navbar */
+    .navbar {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navdiv {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logoimg {
+        width: 50px;
+        height: auto;
+    }
+
+    .toggle {
+        cursor: pointer;
+        display: none; /* Hide the toggle button initially */
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .toggle span {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin-bottom: 4px;
+        transition: all 0.3s ease;
+    }
+
+    #nav-links {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+    }
+
+    #nav-links a, button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #nav-links button {
+        padding: 5px 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #nav-links button:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* About Section Styling */
+    #about, #resources {
+        padding: 20px;
+        color: white;
+    }
+
+    #about img, #resources img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .textI {
+        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    /* Footer Styling */
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        position: relative;
+    }
+
+    /* Toggle Menu Script */
+    .active {
+        display: block;
+    }
+
+    /* Media Queries for Tablet and Mobile */
+    @media (max-width: 768px) {
+        /* Navbar adjustments */
+        .toggle {
+            display: flex; /* Show the toggle on smaller screens */
+        }
+
+        #nav-links {
+            display: none; /* Hide navigation links initially */
+            flex-direction: column;
+            gap: 10px;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+        }
+
+        #nav-links.active {
+            display: flex; /* Show nav links when toggle is clicked */
+        }
+
+        /* Reduce font sizes for smaller screens */
+        body {
+            font-size: 14px;
+        }
+
+        .textI {
+            font-size: 16px;
+        }
+
+        /* Image adjustments for responsiveness */
+        #about img, #resources img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .logoimg {
+            width: 40px; /* Adjust logo size for tablets and phones */
+        }
+
+        footer {
+            padding: 10px;
+        }
+        
+    }
+
+    @media (max-width: 480px) {
+        /* Even smaller font size for mobile devices */
+        body {
+            font-size: 12px;
+        }
+
+        .toggle {
+            display: flex; /* Show the toggle for mobile */
+        }
+
+        #nav-links {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%; /* Full width for mobile navigation */
+            padding: 10px;
+        }
+
+        #nav-links.active {
+            display: flex; /* Show the links when active */
+        }
+
+        .logoimg {
+            width: 35px; /* Smaller logo for mobile */
+        }
+
+        footer {
+            padding: 8px;
+        }
+    }
+      
+  /* About and Resources Images */
+  #about img, #resources img {
+      width: 100%; /* Makes images responsive */
+      max-width: 400px; /* Sets a maximum width to ensure uniform size */
+      height: auto;
+      border-radius: 10px;
+      color: transparent;
+  }
+</style>
+
+  
+</head> 
+<body> 
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="earth.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Navigation -->
+ <nav class="navbar"> 
+    <div class="navdiv"> 
+        <img class="logoimg" src="NEWLOGO.jpg"> 
+        <div class="logo"> 
+            <a href="#" class="logo-text"></a> 
+        </div> 
+        <div class="toggle" id="toggle-btn" aria-label="Toggle navigation menu"> 
+            <span></span> 
+            <span></span> 
+            <span></span> 
+        </div> 
+        <ul id="nav-links"> 
+            <li><a href="https://manishbro500.github.io/ssvt2/" class="underline">Home</a></li> 
+            <li><a href="https://manishbro500.github.io/ssvt2/about.html" class="underline">About</a></li> 
+            <li><a href="contact.html" class="underline">Contact</a></li> 
+            <li><a href="#resources" class="underline">Resources</a></li> 
+            <li><button><a href="class8th.html">class-8th</a></button></li> 
+            <li><button><a href="class%209th.html">class-9th</a></button></li> 
+            <li><button><a href="">REVIEW</a></button></li> 
+            <li><button><a href="class%2010th.html">class 10th</a></button></li> 
+        </ul> 
+    </div> 
+</nav>
+
+
+
+ 
+
+  <!-- About Section -->
+  <div id="about"> 
+    <img class="imgs" src="download%20(1).jpg" alt="About Image"> 
+    <h3 class="textI">Welcome to mysite, your one-stop resource for CBSE students in Jaipatna! We offer comprehensive notes, practice questions, and a wide range of Q&amp;A designed to help you excel in your exams. Our platform also provides access to previous years' question papers, enabling you to practice effectively and gain confidence. Whether you're looking for study material, practice tests, or expert guidance, SSVT is here to support your academic journey and help you achieve your goals.</h3> 
+  </div> 
+  <!-- Resources Section -->
+  <div id="resources"> 
+    <img class="imgss" src="download%20(2).jpg" alt="Resources Image"> 
+    <h3 class="textI">At SSVT Tuition, we take pride in providing high-quality notes that are clear, concise, and tailored to help students understand even the most challenging topics. Our notes are designed to be student-friendly, making complex concepts easy to grasp and reinforcing key ideas essential for exams.Our teachers are experienced, passionate, and dedicated to each student’s success. They go beyond simply teaching; they mentor, inspire, and support students, creating a learning environment where students feel comfortable to ask questions and explore subjects deeply. With personalized attention and expert guidance, our teachers ensure that every student receives the support they need to excel.</h3> 
+  </div>
+  <div id="resources">
+    <img class="imgss" src="everythings diffrent.jpg" alt="Resources Image">
+    <h3 class="textI">At SSVT Tuition, we understand that every child is different, with unique strengths and learning styles. Our approach is tailored to meet each student’s individual needs, helping them not only grasp concepts but also build confidence in their abilities. We believe that with the right guidance and encouragement, every child has the potential to excel and even exceed their own expectations. At SSVT, we strive to bring out the best in each student, empowering them to not only improve academically but to grow as motivated, confident learners.</h3>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    About 
+    <br> © All rights are reserved 2050 
+    <br> Follow on GitHub for more 
+  </footer> 
+
+  <!-- Script for Toggle Menu -->
+  <script>
+    const toggleButton = document.getElementById('toggle-btn');
+    const navLinks = document.getElementById('nav-links');
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+  </script> 
+</body>
+</html>
