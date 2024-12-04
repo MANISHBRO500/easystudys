@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .option {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .option input {
+            margin-right: 10px;
+        }
+
+     
+        .option.wrong {
+            color: red;
+            border: 1px solid red;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+       
+        .option.correct {
+            color: green;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+      
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .option {
+                font-size: 14px;
+            }
+
+            button {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MCQ Quiz</h1>
+
+    <div class="container" id="quiz">
+
+       
+        <div class="question">
+   <h3>1. ଜାତି ଧର୍ମ ନିର୍ବିଶେଷରେ ଗୋପବନ୍ଧୁ କାହା ମୁଖରେ ଆଣି ଅନ୍ନ ଦେଇଥିଲେ ?</h3>
+            <label class="option"><input type="radio" name="q1" value="A"> (A) ଦରିଦ୍ରରମ</label>
+            <label class="option"><input type="radio" name="q1" value="B"> (B) ଦୁଃଖୀର</label>
+            <label class="option"><input type="radio" name="q1" value="C"> (C) ଧନିକର</label>
+            <label class="option"><input type="radio" name="q1" value="D"> (D) ଜାତିର</label>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h3>2. ଗୋପବନ୍ଧୁ କୋଟିଏ ଦରିଦ୍ର ମେଳରେ କ’ଣ ଥିଲେ ?</h3>
+            <label class="option"><input type="radio" name="q2" value="A"> (A) ଜଣେ ଦରିଦ୍ର</label>
+            <label class="option"><input type="radio" name="q2" value="B"> (B) ଏକମାତ୍ର ତ୍ର ଧନୀ ବ୍ଯକ୍ତି</label>
+            <label class="option"><input type="radio" name="q2" value="C"> (C) ଦରିଦ୍ର – ନାରାୟଣ</label>
+            <label class="option"><input type="radio" name="q2" value="D"> (D) ସବୁଠାରୁ ଦରିଦ୍ର</label>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h3>3. କବି କାହାକୁ ଆମର ପ୍ରିୟ  କର୍ମ ବୀର ବୋଲିକହି ଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q3" value="A"> (A) ଗୌରୀଶଙ୍କର ରାୟଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q3" value="B"> (B) ବିଜୁ ପଟ୍ଟନାୟକଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q3" value="C"> (C) ଗୋଦାବରୀଶଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q3" value="D"> (D) ଗୋପବନ୍ଧୁଙ୍କୁ</label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h3>4. କାହାର ମହାପ୍ରୟାଣରେ ଓଡ଼ିଆ ଜାତିର ଗର୍ବ ଭାଙ୍ଗିଗଲା ବୋଲି କବି କହି ଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q4" value="A"> (A) ଗୋପବନ୍ଧୁଙ୍କର</label>
+            <label class="option"><input type="radio" name="q4" value="B"> (B) ରାଜାଙ୍କର</label>
+            <label class="option"><input type="radio" name="q4" value="C"> (C) ସୌଦାଗରଙ୍କର</label>
+            <label class="option"><input type="radio" name="q4" value="D"> (D) ମହା ହାଜନଙ୍କର</label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h3>5. ମହାବୀରଙ୍କ ମହାପ୍ରୟାଣରେ ପ୍ରତିଟି ଅଧରରେ ଅଧରରେ କାହାର ନାମ ଉଚ୍ଚାରିତ ହେଉଥୁଲା ?</h3>
+            <label class="option"><input type="radio" name="q5" value="A">(A) ଭଗବାନଙ୍କର</label>
+            <label class="option"><input type="radio" name="q5" value="B"> (B) ଗୋପବନ୍ଧୁ ଙ୍କର</label>
+            <label class="option"><input type="radio" name="q5" value="C"> (C) ରାମଙ୍କର</label>
+            <label class="option"><input type="radio" name="q5" value="D"> (D) କୃଷ୍ଣଙ୍କର</label>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h3>6. ଗୋପବନ୍ଧୁଙ୍କ ମହାପ୍ରୟାଣରେ ଘରେ ଘରେ କେଉଁ ଶବ୍ଦ ଶୁଭିଛି ?</h3>
+            <label class="option"><input type="radio" name="q6" value="A"> (A) କ୍ରନ୍ଦନ</label>
+            <label class="option"><input type="radio" name="q6" value="B"> (B) ସଂକୀର୍ତ୍ତନ</label>
+            <label class="option"><input type="radio" name="q6" value="C"> (C) ସଙ୍ଗୀତ</label>
+            <label class="option"><input type="radio" name="q6" value="D"> (D) କଳହ</label>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h3>7. ଗୋପବନ୍ଧୁଙ୍କ ବିୟୋଗରେ କେଉଁ ଜାତିର ମଥାମଣି ଭୂତଳେ ଖସିପଡ଼ିଲା ବୋଲି କବି କହିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q7" value="A"> (A) ବ୍ରାହ୍ମଣ ଜାତିର</label>
+            <label class="option"><input type="radio" name="q7" value="B"> (B) କ୍ଷତ୍ରିୟ ଜାତିର</label>
+            <label class="option"><input type="radio" name="q7" value="C"> (C) ମାନବ ଜାତିର</label>
+            <label class="option"><input type="radio" name="q7" value="D"> (D) ଓଡ଼ିଆ ଜାତିର</label>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h3>8. ନୟନରେ କ'ଣ ଭରି ଆସିବାକୁ କବି ନାଗରିକମାନଙ୍କୁ ଆହ୍ବାନ ଜଣାଇଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q8" value="A"> (A) ଅଞ୍ଜନ</label>
+            <label class="option"><input type="radio" name="q8" value="B"> (B) ซ</label>
+            <label class="option"><input type="radio" name="q8" value="C"> (C) ଜଳ</label>
+            <label class="option"><input type="radio" name="q8" value="D"> (D) ରଙ୍ଗ</label>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h3>୨. ଚରଣ ନଗ୍ନ କରି କେଉଁଠାକୁ ଆସିବାକୁ କବି ସମସ୍ତଙ୍କୁ ନିବେଦନ କରିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q9" value="A"> (A) ମନ୍ଦିରକୁ</label>
+            <label class="option"><input type="radio" name="q9" value="B"> (B) ବାହାରକୁ</label>
+            <label class="option"><input type="radio" name="q9" value="C"> (C) ରାଜପଥକୁ</label>
+            <label class="option"><input type="radio" name="q9" value="D"> (D) ପ୍ରାନ୍ତର କୁ</label>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h3>10. ମଥା ନତ କରି କାହାକୁ ସମ୍ମାନ ଜଣାଇବାକୁ କବି ନିବେଦନ କରିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q10" value="A"> (A) ଗୋପବନ୍ଧୁଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q10" value="B"> (B) ଗୋପବନ୍ଧୁଙ୍କ ମରଶରୀରକୁ</label>
+            <label class="option"><input type="radio" name="q10" value="C">(C) ଈଶ୍ୱରଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q10" value="D"> (D) ରାଜାଙ୍କୁ</label>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <h3>11. ଗୋପବନ୍ଧୁ ଙ୍କ ବିୟୋଗରେ କେଉଁଠାରେ ଅନ୍ଧାର ଘୋଟିଯାଇଛି ବୋଲି କବି କହିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q11" value="A"> (A) ସଂସାରରେ</label>
+            <label class="option"><input type="radio" name="q11" value="B"> (B) ଓଡ଼ିଶାରେ</label>
+            <label class="option"><input type="radio" name="q11" value="C"> (C) ଭାରତରେ</label>
+            <label class="option"><input type="radio" name="q11" value="D">(D) ପ୍ରତି ହୃଦୟରେ</label>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <h3>12. କବି କାହାକୁ ଓଡ଼ିଆଜାତିର ମଥାମଣି ବୋଲି ବର୍ଣ୍ଣନା କରିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q12" value="A"> (A) ମଧୁବାବୁଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q12" value="B"> (B) ଗୋପବନ୍ଧୁଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q12" value="C">(C) ବିଜୁବାବୁଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q12" value="D"> (D) ମହତାବଙ୍କୁ</label>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <h3>13. ଆମ କର୍ମବୀର ଆମର କେତେ ପ୍ରିୟ ଥିଲେ, ତାହା କିଏ ଜାଣୁ ବୋଲି କବି କହିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q13" value="A">(A) ଈଶ୍ବର</label>
+            <label class="option"><input type="radio" name="q13" value="B"> (B) ଜଗତ</label>
+            <label class="option"><input type="radio" name="q13" value="C"> (C) ଜନତା</label>
+            <label class="option"><input type="radio" name="q13" value="D"> (D) ମରଣ</label>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h3>14. ‘ଗବାକ୍ଷ’ କହିଲେ କାହାକୁ ବୁଝାଏ ?</h3>
+            <label class="option"><input type="radio" name="q14" value="A">(A) ଗାଈର ଆଖକୁ</label>
+            <label class="option"><input type="radio" name="q14" value="B"> (B) ଗବଗଛକୁ</label>
+            <label class="option"><input type="radio" name="q14" value="C">(C) ଗବଫଳକୁ</label>
+            <label class="option"><input type="radio" name="q14" value="D">(D) ଝରକାକୁ</label>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h3>15. କବିତାରେ କବି ମହାବୀର ବୋଲି କାହାକୁ କହିଛନ୍ତି?</h3>
+            <label class="option"><input type="radio" name="q15" value="A">(A) ପାଇକମାନଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q15" value="B"> (B) ସେନାପତିଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q15" value="C"> (C) ଗୋପାଳମାନଙ୍କୁ</label>
+            <label class="option"><input type="radio" name="q15" value="D"> (D) ଗୋପବନ୍ଧୁଙ୍କୁ</label>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h3>16. ଗୋପବନ୍ଧୁଙ୍କ ମହାପ୍ରୟାଣରେ ମହାଜାତିର କ’ ଭାଜିଗଲା ବୋଲି କବି କହିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q16" value="A">(A) ଗର୍ବ</label>
+            <label class="option"><input type="radio" name="q16" value="B"> (B) ମୋହ</label>
+            <label class="option"><input type="radio" name="q16" value="C"> (C) ଅହଂକାର</label>
+            <label class="option"><input type="radio" name="q16" value="D"> (D) ମାୟା</label>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <h3>17. ଗୋପବନ୍ଧୁ ଙ୍କ ବିୟୋଗରେ ପ୍ରତି କର ରେ କ', ନଇଁଯାଇଛି ବୋଲି କବି କହିଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q17" value="A"> (A) ପତାକା</label>
+            <label class="option"><input type="radio" name="q17" value="B"> (B) ଫୁଲମାଳ</label>
+            <label class="option"><input type="radio" name="q17" value="C"> (C) ଦଣ୍ଡ</label>
+            <label class="option"><input type="radio" name="q17" value="D"> (D) ଆଶାବାଡ଼ି</label>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <h3>18. କ’ଣ ଭୁଲି ଜାତିର ରାଜାଙ୍କୁ ସମ୍ମାନ ଜଣାଇବାକୁ କ ହିନ୍ଦୁ, ଖ୍ରୀଷ୍ଟାନ୍ ଓ ମୁସଲମାନ ମାନଙ୍କୁ ନିବେଦନ କରି ଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q18" value="A"> (A) ରାଗ</label>
+            <label class="option"><input type="radio" name="q18" value="B"> (B) ଲୋଭ</label>
+            <label class="option"><input type="radio" name="q18" value="C"> (C) ପରଶ୍ରୀକାତରତା</label>
+            <label class="option"><input type="radio" name="q18" value="D"> (D) ସକଳ କ୍ଷୁଦ୍ରତା</label>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <h3>19. ଗୋପବନ୍ଧୁ ଦରିଦ୍ରଙ୍କ ମୁଖରେ ଅନ୍ନ ଦେଲାବେଳେ କ'ଣ ଭୁଲିଯାଉଥିଲେ ?</h3>
+            <label class="option"><input type="radio" name="q19" value="A">(A) ดูเर्थ</label>
+            <label class="option"><input type="radio" name="q19" value="B"> (B) นศ์</label>
+            <label class="option"><input type="radio" name="q19" value="C"> (C) ଶତ୍ରୁତା</label>
+            <label class="option"><input type="radio" name="q19" value="D"> (D) ଜାତି</label>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <h3>20. ଗୋପବନ୍ଧୁ ଙ୍କ ଶବର ଶୋଭାଯାତ୍ରାରେ ସାମିଲ ହୋଇଥିବା ବ୍ୟକ୍ତିବର୍ଗଙ୍କୁ କବି କ’ଣ ବୋଲି ଅଭିହିତ କରି ଛନ୍ତି ?</h3>
+            <label class="option"><input type="radio" name="q20" value="A"> (A) ଶବଯାତ୍ରୀ</label>
+            <label class="option"><input type="radio" name="q20" value="B"> (B) ଶୋଭାଯାତ୍ରୀ</label>
+            <label class="option"><input type="radio" name="q20" value="C"> (C) ବ୍ରାହ୍ମଣ</label>
+            <label class="option"><input type="radio" name="q20" value="D"> (D) ବରଯାତ୍ରୀ</label>
+        </div>
+
+        <!-- Question 21 -->
+        <div class="question">
+            <h3>21. ଆତ୍ମାର ଅମରତ୍ୱ ଲାଭପାଇଁ କରାଯାଉଥିବା ପ୍ରାର୍ଥନାକୁ କ'ଣ କୁହାଯାଏ ?</h3>
+            <label class="option"><input type="radio" name="q21" value="A"> (A) ଅମର ମନ୍ତ୍ର</label>
+            <label class="option"><input type="radio" name="q21" value="B"> (B) ମରଣ ମନ୍ତ୍ର</label>
+            <label class="option"><input type="radio" name="q21" value="C"> (C) ବିଜୟ ମନ୍ତ୍ର</label>
+            <label class="option"><input type="radio" name="q21" value="D"> (D) ଜୟ ମନ୍ତ୍ର</label>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <h3>22. ସନାତନ ଧର୍ମାବଲମ୍ବୀମାନଙ୍କୁ କ’ଣ କୁହାଯାଏ ?</h3>
+            <label class="option"><input type="radio" name="q22" value="A"> (A) ସନାତନି</label>
+            <label class="option"><input type="radio" name="q22" value="B"> (B) ସନାନ୍ତ ନି</label>
+            <label class="option"><input type="radio" name="q22" value="C"> (C) ସନନ୍ତ ନୀ</label>
+            <label class="option"><input type="radio" name="q22" value="D"> (D) ସନାତନୀ</label>
+        </div>
+    </div>
+
+        <button onclick="submitQuiz()">Submit</button>
+
+        <div class="result" id="result"></div>
+    
+
+    <script>
+        function submitQuiz() {
+            const totalQuestions = 22;
+            let score = 0;
+
+            
+            const correctAnswers = [
+               "A", "C", "D", "A", "B", "A", "D", "C", "D", "B", "D", "B", "C", "D", "D", "A", "A", "D", "D", "B", "D", "D"
+            ];
+
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption) {
+                    const answerValue = selectedOption.value;
+                    if (answerValue === correctAnswers[i - 1]) {
+                        score++;
+                        selectedOption.parentElement.classList.add('correct');
+                    } else {
+                        selectedOption.parentElement.classList.add('wrong');
+                    }
+                }
+            }
+
+            
+            const result = document.getElementById('result');
+            result.textContent = `Your score is ${score} out of ${totalQuestions}`;
+        }
+    </script>
+</body>
+</html>
