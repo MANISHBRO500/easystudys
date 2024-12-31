@@ -1,19 +1,48 @@
 <!doctype html>
-<html lang="en"> 
-<head> 
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-signin-client_id" content="115214740198-8sv0tv6vundp27kfukamev3hcd43iqlu.apps.googleusercontent.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap" rel="stylesheet"> 
-  <title>MADE BY MANISH BEHERA</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap" rel="stylesheet">
+  <title>Login with Google - MADE BY MANISH BEHERA</title>
 
   <style>
-    /* Existing styles */
-    /* (All your existing CSS styles remain here) */
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    /* Login Specific Styles */
+    /* Video Background */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    body {
+        position: relative;
+        z-index: 1;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        text-align: center;
+    }
+
     .login-container {
         margin-top: 20%;
         background: rgba(0, 0, 0, 0.8);
@@ -22,7 +51,6 @@
         width: 300px;
         margin-left: auto;
         margin-right: auto;
-        text-align: center;
     }
 
     .g-signin2 {
@@ -58,9 +86,33 @@
     .logout:hover {
         background-color: #ff1111;
     }
+
+    /* Top Left User Profile Icon */
+    .user-icon {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        display: none;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .user-icon img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .user-icon span {
+        color: white;
+        font-size: 14px;
+    }
   </style>
-</head> 
-<body> 
+</head>
+<body>
   <!-- Video Background -->
   <div class="video-background">
     <video autoplay muted loop>
@@ -69,10 +121,11 @@
     </video>
   </div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <!-- (Your existing navigation content) -->
-  </nav>
+  <!-- User Icon at Top Left -->
+  <div class="user-icon" id="user-icon">
+    <img id="top-user-img" alt="User Icon">
+    <span id="top-user-name"></span>
+  </div>
 
   <!-- Login Section -->
   <div class="login-container">
@@ -87,40 +140,42 @@
     <button class="logout" onclick="signOut()">Sign Out</button>
   </div>
 
-  <!-- About Section -->
-  <div id="about">
-    <!-- (Your existing about content) -->
-  </div>
-
-  <!-- Resources Section -->
-  <div id="resources">
-    <!-- (Your existing resources content) -->
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <!-- (Your existing footer content) -->
-  </footer>
-
   <!-- Google Sign-In API -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script>
     // On successful sign-in
     function onSignIn(googleUser) {
+      // Get user profile
       const profile = googleUser.getBasicProfile();
+
+      // Hide login container and show user profile
       document.querySelector('.login-container').style.display = 'none';
       const userProfile = document.getElementById('user-profile');
       userProfile.style.display = 'block';
+
+      // Update User Profile Section
       document.getElementById('profile-img').src = profile.getImageUrl();
-      document.getElementById('profile-name').innerText = Welcome, ${profile.getName()};
+      document.getElementById('profile-name').innerText = `Welcome, ${profile.getName()}`;
+
+      // Show and update the top left icon
+      const userIcon = document.getElementById('user-icon');
+      userIcon.style.display = 'flex';
+      document.getElementById('top-user-img').src = profile.getImageUrl();
+      document.getElementById('top-user-name').innerText = profile.getName();
     }
 
     // Sign out function
     function signOut() {
       const auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(() => {
+        // Hide user profile and show login container
         document.getElementById('user-profile').style.display = 'none';
         document.querySelector('.login-container').style.display = 'block';
+
+        // Hide top left user icon
+        const userIcon = document.getElementById('user-icon');
+        userIcon.style.display = 'none';
+
         console.log('User signed out.');
       });
     }
