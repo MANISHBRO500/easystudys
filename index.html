@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <meta name="google-signin-client_id" content="115214740198-8sv0tv6vundp27kfukamev3hcd43iqlu.apps.googleusercontent.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap" rel="stylesheet"> 
+  <title>MADE BY MANISH BEHERA</title> 
+
+  <style>
+    /* Existing styles */
+    /* (All your existing CSS styles remain here) */
+
+    /* Login Specific Styles */
+    .login-container {
+        margin-top: 20%;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .g-signin2 {
+        margin: 20px auto;
+        display: inline-block;
+    }
+
+    .user-profile {
+        display: none;
+        margin-top: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .user-profile img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .logout {
+        background-color: #ff4444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .logout:hover {
+        background-color: #ff1111;
+    }
+  </style>
+</head> 
+<body> 
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="winter_CHjLeZG6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <!-- (Your existing navigation content) -->
+  </nav>
+
+  <!-- Login Section -->
+  <div class="login-container">
+    <h1>Welcome to SSVT</h1>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  </div>
+
+  <!-- User Profile Section -->
+  <div class="user-profile" id="user-profile">
+    <img id="profile-img" alt="User Profile Picture">
+    <h3 id="profile-name"></h3>
+    <button class="logout" onclick="signOut()">Sign Out</button>
+  </div>
+
+  <!-- About Section -->
+  <div id="about">
+    <!-- (Your existing about content) -->
+  </div>
+
+  <!-- Resources Section -->
+  <div id="resources">
+    <!-- (Your existing resources content) -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- (Your existing footer content) -->
+  </footer>
+
+  <!-- Google Sign-In API -->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    // On successful sign-in
+    function onSignIn(googleUser) {
+      const profile = googleUser.getBasicProfile();
+      document.querySelector('.login-container').style.display = 'none';
+      const userProfile = document.getElementById('user-profile');
+      userProfile.style.display = 'block';
+      document.getElementById('profile-img').src = profile.getImageUrl();
+      document.getElementById('profile-name').innerText = Welcome, ${profile.getName()};
+    }
+
+    // Sign out function
+    function signOut() {
+      const auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(() => {
+        document.getElementById('user-profile').style.display = 'none';
+        document.querySelector('.login-container').style.display = 'block';
+        console.log('User signed out.');
+      });
+    }
+  </script>
+</body>
+</html>
